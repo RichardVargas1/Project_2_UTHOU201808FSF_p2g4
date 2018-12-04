@@ -1,6 +1,9 @@
 // Require the express npm package
 let express = require("express");
 
+// Require the passport npm package
+let passport = require("passport");
+
 // Setting the port
 let PORT = process.env.PORT || 7500;
 
@@ -23,6 +26,8 @@ app.set("view engine", "handlebars");
 let routes = require("");
 
 app.use(routes);
+require("./config/passport.js")(passport, db.user);
+require("./routes/loginRoutes")(app, passport);
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
