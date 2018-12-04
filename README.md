@@ -1,15 +1,16 @@
 # Project 2 Proposal
 
-## Hello Stranger
-A real-time video matching application. 
-
-First Impressions are everything! Think Omegle meets Tinder. Users will sign up for an account, choose their orientation, and have 5 seconds to match with a total "nearby" stranger. If they match, they can continue the conversation. If not, they're gone forever. This app is focused on anonymity and the need to know who swiped the other way. 
+## Ensights (Energy Insights)
+A data-driven application dedicated to helping users recognize the value of making energy-smart purchases. The site includes user authentication, search and browse for energy-efficient products, data-visualization, an energy-savings calculator, and links to purchase products and user reviews. 
 
 ## Technology Used 
-Twilio Programmable Video, Google Maps API, Random User Generator API
+User Authentication, Energy Star API, Amazon API, Energy Savings Calculator, and possibly other APIs as we build out the application.
 
 ## Challenges 
-Getting the Twilio camera to allow for multiple users. Entering video conference anonymously, going through a 5 second impression of another user, and allowing them to choose who they want to match with based off input. 
+Lots of data sets and pages on the site. Data storage options? Cost savings calculator maybe tricky. 
 
 ## Contingencies
-If the Twilio camera does not work the way we intended or programming requirements exceed our bandwidth, we may opt to use a carousel of MP4's as a demonstration/mockup for future developement. 
+Minimize data sets by honing in on only specific appliances.
+
+## Deficiencies 
+Amazon API will not return all appliances
