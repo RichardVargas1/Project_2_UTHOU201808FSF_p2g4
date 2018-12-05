@@ -17,12 +17,7 @@ body,
   .col.s6 > .btn {
      width: 100%;
   }
-  .gender-male,.gender-female {
-    display: inline-block;
-  }
-  .gender-female {
-    margin-left: 35px;
-  }
+
   radio:required {
     border-color: red;
   }
