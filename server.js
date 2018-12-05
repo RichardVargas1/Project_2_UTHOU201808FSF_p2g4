@@ -26,8 +26,8 @@ app.set("view engine", "handlebars");
 let htmlRoutes = require("./routes/htmlRoutes");
 let apiRoutes = require("./routes/apiRoutes");
 
-app.use('/', htmlRoutes);
-app.use('/api', apiRoutes);
+app.use("/", htmlRoutes);
+app.use("/api", apiRoutes);
 
 //require("./config/passport.js")(passport, db.user);
 //require("./routes/loginRoutes")(app, passport);

@@ -1,4 +1,7 @@
-'use strict';
+function strict() {
+  // Function-level strict mode syntax
+  'use strict';
+}
 
 const fs = require('fs');
 const path = require('path');
