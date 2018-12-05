@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Ensights</title>
-        
-        <!-- Boostrap Stylesheet -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        
-        <!-- Cool Style Sheet -->
-        <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Ensights</title>
 
-        <!-- CSS Style Sheet -->
-        <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-    </head>
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Boostrap Stylesheet -->
+   
+    <!-- Cool Style Sheet -->
+    <link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 
-    <body>
-        <div class="">
+</head>
 
-            {{{ body }}}
+<body>
 
-        </div>
-        
-        <footer class="footer">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
-                        Copyright © 
-                    </div>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper teal accent-3">
+                <div class="container-nav">
+                    <img src="#" id="logo">
+                    <a href="/" class="brand-logo">Ensights</a>
+                    <ul class="right">
+                        <li id="home">
+                            <a href="/home">Home</a>
+                        </li>
+                        <li id="profile">
+                            <a href="/profile">Profile</a>
+                        </li>
+                        <li id="logout">
+                            <a href="/logout">Logout</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+        </nav>
+    </div>
 
-        <!-- jQuery Reference -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- My Script -->
-        <script type="text/javascript" src=""></script>
-    </body>
+
+        {{{ body }}}
+
+
+
+    
+
+    <!-- jQuery Reference -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- My Script -->
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+
 </html>
