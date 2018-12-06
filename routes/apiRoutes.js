@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+// Axios to pass API requirement
 const request = axios.create({
     baseURL: "https://data.energystar.gov/resource",
     headers: { "X-App-Token": "rSGJanpH6okWzqMSAL4lRi4eh" }
@@ -29,7 +30,9 @@ router.post("/login", (req, res) => {
 router.get("/refresh/:cat", async (req, res) => {
     const cat = req.params.cat;
     const cats = Object.keys(energyStarRoutes);
-    if (cats.indexOf(cat) === -1) throw new Error("Category does not exist!");
+    if (cats.indexOf(cat) === -1) {
+        throw new Error("Category does not exist!");
+    }
     const resp = await request.get(energyStarRoutes[cat]);
     console.log(resp.data[0]);
 });
