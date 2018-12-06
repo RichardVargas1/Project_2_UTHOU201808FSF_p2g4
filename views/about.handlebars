@@ -1,16 +1,30 @@
-  <!-- About -->
-  
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
-    <h2 class="w3-wide">ABOUT US</h2>
-    <p class="w3-justify">Ensights was developed by Richard Vargas, Rezwana Rubaiya, and Salil Bhise as a Full Stack Web Development project at the Houston Coding Bootcamp delivered by the University of Texas at Austin. Like what you see or have any questions? Let’s talk!</p>
+  <!-- ☰ button -->
+  <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+  </div>
+<script>
+   function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
 
-    	<!-- Start Team -->
+   function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+  <!-- Start Team -->
     		<div class="container">
     			<div class="row">
     				<div class="col-md-9">
     					<h1 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s"><span>AWESOME</span> TEAM</h1>
     				</div>
     				<div class="col-md-3 col-sm-6 col-xs-9 wow fadeIn" data-wow-offset="50" data-wow-delay="1.3s">
+                         <p class="w3-justify">Ensights was developed by Richard Vargas, Rezwana Rubaiya, and Salil Bhise as a Full Stack Web Development project at the Houston Coding Bootcamp delivered by the University of Texas at Austin. Like what you see or have any questions? Let’s talk!</p>
     					<div class="team-wrapper">
     						<img src="https://davejamesmiller.com/build/img/avatar.b868939a1e1e76732e0e.png" class="img-responsive" alt="team img 1">
     							<div class="team-des">
@@ -44,3 +58,4 @@
     		</div>
         
     	<!-- end team -->
+
