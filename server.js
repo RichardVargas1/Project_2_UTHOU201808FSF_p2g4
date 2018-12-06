@@ -7,7 +7,26 @@ let express = require("express");
 // Setting the port
 let PORT = process.env.PORT || 7500;
 
-let app = express();
+const app = express();
+
+const passport = require("passport");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+
+//For BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// For Passport
+app.use(
+    session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+); // session secret
+
+app.use(passport.initialize());
+
+app.use(passport.session()); // persistent login sessions
+
+// const env = require("dotenv").load();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
