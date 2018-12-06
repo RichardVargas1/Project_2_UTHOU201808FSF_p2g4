@@ -14,8 +14,8 @@ router.get("/register", (req, res) => {
 });
 
 // Render 404 page for any unmatched routes
-router.get("*", (req, res) => {
-    res.render("404");
-});
+// router.get("*", (req, res) => {
+//     res.render("404");
+// });
 
 module.exports = router;
