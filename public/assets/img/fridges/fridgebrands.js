@@ -27,11 +27,11 @@ let data = [
     { id: 1, name: "Daewoo", r: 15 },
     { id: 1, name: "Danby", r: 24 },
     { id: 1, name: "Danby Design", r: 17 },
-    {"id": 1, "name": "Dayton", "r": 7 },
-    {"id": 1, "name": "DCS", "r": 6 },
-    {"id": 1, "name": "Diplomat", "r": 3 },
-    {"id": 1, "name": "EcoMax", "r": 2 },
-    {"id": 1, "name": "Edgestar", "r": 1 },
+    { id: 1, name: "Dayton", r: 7 },
+    { id: 1, name: "DCS", r: 6 },
+    { id: 1, name: "Diplomat", r: 3 },
+    { id: 1, name: "EcoMax", r: 2 },
+    { id: 1, name: "Edgestar", r: 1 },
     { id: 1, name: "Electrolux", r: 17 },
     { id: 1, name: "ELLIPSE", r: 9 },
     { id: 1, name: "Emerald Chef", r: 25 },
@@ -48,11 +48,11 @@ let data = [
     { id: 1, name: "GE", r: 258 },
     { id: 1, name: "Gladiator", r: 1 },
     { id: 1, name: "Goldstar", r: 1 },
-    {"id": 1, "name": "Gorenje", "r": 6 },
-    {"id": 1, "name": "Haier", "r": 9 },
-    {"id": 1, "name": "Hamilton Beach", "r": 14 },
-    {"id": 1, "name": "Hanover", "r": 2 },
-    {"id": 1, "name": "Hisense", "r": 29 },
+    { id: 1, name: "Gorenje", r: 6 },
+    { id: 1, name: "Haier", r: 9 },
+    { id: 1, name: "Hamilton Beach", r: 14 },
+    { id: 1, name: "Hanover", r: 2 },
+    { id: 1, name: "Hisense", r: 29 },
     { id: 1, name: "Home", r: 1 },
     { id: 1, name: "Hotpoint", r: 6 },
     { id: 1, name: "IGLOO", r: 20 },
@@ -63,25 +63,25 @@ let data = [
     { id: 1, name: "Kegco", r: 7 },
     { id: 1, name: "Kenmore", r: 86 },
     { id: 1, name: "Keystone", r: 6 },
-    {"id": 1, "name": "Kitchen Aid", "r": 61 },
-    {"id": 1, "name": "KOOLATRON", "r": 1 },
-    {"id": 1, "name": "LG", "r": 99 },
-    {"id": 1, "name": "Liebherr", "r": 66 },
-    {"id": 1, "name": "Lorell", "r": 3 },
-    {"id": 1, "name": "Mabe", "r": 3 },
-    {"id": 1, "name": "Magic Chef", "r": 68 },
-    {"id": 1, "name": "Magic Cool", "r": 1 },
-    {"id": 1, "name": "Marathon", "r": 61 },
-    {"id": 1, "name": "Marvel", "r": 53 },
-    {"id": 1, "name": "Maytag", "r": 27 },
-    {"id": 1, "name": "MC Appliance", "r": 1 },
-    {"id": 1, "name": "Meile", "r": 2 },
+    { id: 1, name: "Kitchen Aid", r: 61 },
+    { id: 1, name: "KOOLATRON", r: 1 },
+    { id: 1, name: "LG", r: 99 },
+    { id: 1, name: "Liebherr", r: 66 },
+    { id: 1, name: "Lorell", r: 3 },
+    { id: 1, name: "Mabe", r: 3 },
+    { id: 1, name: "Magic Chef", r: 68 },
+    { id: 1, name: "Magic Cool", r: 1 },
+    { id: 1, name: "Marathon", r: 61 },
+    { id: 1, name: "Marvel", r: 53 },
+    { id: 1, name: "Maytag", r: 27 },
+    { id: 1, name: "MC Appliance", r: 1 },
+    { id: 1, name: "Meile", r: 2 },
     { id: 1, name: "MicroChill", r: 4 },
     { id: 1, name: "MicroFridge", r: 94 },
     { id: 1, name: "Midea", r: 57 },
     { id: 1, name: "MIGALI", r: 2 },
     { id: 1, name: "Moffat", r: 4 },
-     { id: 1, name: "Monogram", r: 4 },
+    { id: 1, name: "Monogram", r: 4 },
     { id: 1, name: "Norpole", r: 1 },
     { id: 1, name: "Panasonic", r: 2 },
     { id: 1, name: "Perfect aire", r: 10 },
@@ -96,11 +96,11 @@ let data = [
     { id: 1, name: "Silhouette Professional", r: 8 },
     { id: 1, name: "Smeg", r: 3 },
     { id: 1, name: "Snackmate", r: 4 },
-    {"id": 1, "name": "SPT", "r": 10 },
-    {"id": 1, "name": "Sub-Zero", "r": 21 },
-    {"id": 1, "name": "Summit", "r": 37 },
-    {"id": 1, "name": "Sunbeam", "r": 1 },
-    {"id": 1, "name": "Sylvania", "r": 3 },
+    { id: 1, name: "SPT", r: 10 },
+    { id: 1, name: "Sub-Zero", r: 21 },
+    { id: 1, name: "Summit", r: 37 },
+    { id: 1, name: "Sunbeam", r: 1 },
+    { id: 1, name: "Sylvania", r: 3 },
     { id: 1, name: "Thermador", r: 3 },
     { id: 1, name: "THORKITCHEN", r: 3 },
     { id: 1, name: "TRAMONTINA", r: 3 },
@@ -109,10 +109,9 @@ let data = [
     { id: 1, name: "U-Line", r: 24 },
     { id: 1, name: "VIKING", r: 18 },
     { id: 1, name: "Whirlpool", r: 76 },
-    {"id": 1, "name": "White-Westinghouse", "r": 3 },
-    {"id": 1, "name": "Whynter", "r": 3 },
-    {"id": 1, "name": "Willz", "r": 1 },
-
+    { id: 1, name: "White-Westinghouse", r: 3 },
+    { id: 1, name: "Whynter", r: 3 },
+    { id: 1, name: "Willz", r: 1 }
 ];
 
 let width = window.innerWidth,
@@ -120,15 +119,18 @@ let width = window.innerWidth,
 
 let fill = d3.scale.category10();
 
-let nodes = [], labels = [],
-    foci = [{x: 0, y: 150}, {x: 350, y: 150}, {x: 200, y: 150}];
+let nodes = [],
+    foci = [{ x: 0, y: 150 }, { x: 350, y: 150 }, { x: 200, y: 150 }];
 
-let svg = d3.select("body").append("svg")
+let svg = d3
+    .select("body")
+    .append("svg")
     .attr("width", "100%")
     .attr("height", height);
 //.attr("domflag", '');
 
-let force = d3.layout.force()
+let force = d3.layout
+    .force()
     .nodes(nodes)
     .links([])
     .charge(-400)
@@ -138,31 +140,29 @@ let force = d3.layout.force()
     .size([width, height])
     .on("tick", tick);
 
-//var node = svg.selectAll("circle");
+
 let node = svg.selectAll("g");
 
 let counter = 0;
 
-function tick(e) {
-    let k = 0.1 * e.alpha;
+function tick(e)
+const k = 0.1 * e.alpha;
 
-    // Push nodes toward their designated focus.
-    nodes.forEach(function(o, i) {
-          o.y += (foci[o.id].y - o.y) * k;
-        o.x += (foci[o.id].x - o.x) * k;
-    });
+// Push nodes toward their designated focus.
+nodes.forEach(function(o) {
+    o.y += (foci[o.id].y - o.y) * k;
+    o.x += (foci[o.id].x - o.x) * k;
+});
 
-    node.attr("transform", function(d) {
-        return "translate(" + d.x + "," + d.y + ")";
-  });
+node.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+});
 
-
-var timer = setInterval(function(){
-
+const timer = setInterval(function() {
     if (nodes.length > data.length - 1) {
         clearInterval(timer);
         return;
-  }
+    }
 
     let item = data[counter];
     nodes.push({ id: item.id, r: item.r, name: item.name });
@@ -179,16 +179,18 @@ var timer = setInterval(function(){
         })
         .style("cursor", "pointer")
         .on("mousedown", function() {
-             let sel = d3.select(this);
-             sel.moveToFront();
+            let sel = d3.select(this);
+            sel.moveToFront();
         })
         .call(force.drag);
 
     n.append("circle")
-        .attr("r", function(d) { return d.r; })
+        .attr("r", function(d) {
+            return d.r;
+        })
         .style("fill", function(d) {
             return fill(d.id);
-        });;
+        });
 
     n.append("text")
         .text(function(d) {
@@ -202,11 +204,10 @@ var timer = setInterval(function(){
                 ) + "px"
             );
         })
-        .attr("dy", ".35em");;
+        .attr("dy", ".35em");
 
     counter++;
 }, 100);
-
 
 d3.selection.prototype.moveToFront = function() {
     return this.each(function() {
@@ -220,4 +221,4 @@ function resize() {
     force.start();
 }
 
-d3.select(window).on("resize", resize)
+d3.select(window).on("resize", resize);
