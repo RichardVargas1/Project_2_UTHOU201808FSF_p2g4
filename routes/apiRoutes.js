@@ -24,7 +24,6 @@ router.post("/register", (req, res) => {
 });
 
 // Login route
-
 router.post("/login", (req, res, next) => {
     console.log("here at least");
     passport.authenticate("local-signin", {}, (err, user, info) => {
