@@ -35,6 +35,7 @@ router.get("/refresh/:cat", async (req, res) => {
     }
     const resp = await request.get(energyStarRoutes[cat]);
     console.log(resp.data[0]);
+    res.send(resp);
 });
 
 module.exports = router;
