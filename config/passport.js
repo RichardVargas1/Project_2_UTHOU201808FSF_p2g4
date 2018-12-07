@@ -101,4 +101,4 @@ passport.use(
                     cb(null, obj);
                 });
 
-                module.exports = passport;
+                module.exports = passport })
