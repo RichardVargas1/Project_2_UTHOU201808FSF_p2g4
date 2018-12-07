@@ -18,11 +18,9 @@
 
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-
 </head>
 
 <body>
-
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper grey darken-4">
@@ -45,57 +43,22 @@
             </div>
         </nav>
     </div>
-{{!-- 
-<svg width="960 " height="960 "><g transform="translate(480,480) "></g></svg>
-<script src="//d3js.org/d3.v4.0.0-alpha.35.min.js "></script>
-<script>
 
-    var svg = d3.select("svg "),
-        width = +svg.attr("width "),
-        height = +svg.attr("height "),
-        size = Math.max(width, height);
+    
+    {{{ body }}}
 
-    var color = d3.scaleRainbow()
-        .domain([0, 2 * Math.PI]);
-
-    var circles = d3.packSiblings(d3.range(2000)
-        .map(d3.randomUniform(8, 26))
-        .map(function (r) { return { r: r }; }))
-        .filter(function (d) { return -500 < d.x && d.x < 500 && -500 < d.y && d.y < 500; });
-
-    svg
-        .select("g ")
-        .selectAll("circle ")
-        .data(circles)
-        .enter().append("circle ")
-        .style("fill ", function (d) { return color(d.angle = Math.atan2(d.y, d.x)); })
-        .attr("cx ", function (d) { return Math.cos(d.angle) * (size / Math.SQRT2 + 30); })
-        .attr("cy ", function (d) { return Math.sin(d.angle) * (size / Math.SQRT2 + 30); })
-        .attr("r ", function (d) { return d.r - 0.25; })
-        .transition()
-        .ease(d3.easeCubicOut)
-        .delay(function (d) { return Math.sqrt(d.x * d.x + d.y * d.y) * 10; })
-        .duration(1000)
-        .attr("cx ", function (d) { return d.x; })
-        .attr("cy ", function (d) { return d.y; });
-
-</script> --}}
-
-        {{{ body }}}
-
-                             <!-- Snatchbot in lower right corner of app -->
-                            <link href="https://snatchbot.me/sdk/webchat.css " rel="stylesheet " type="text/css
-                        "><script src="https://snatchbot.me/sdk/webchat.min.js "></script><script> Init('?botID=38148&appID=webchat', 300, 350, 'https://dvgpba5hywmpo.cloudfront.net/media/image/BpvRQM3EEWY13YCZAd33DOTa8', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '1', '#FFFFFF', 0); /* for authentication of its users, you can define your userID (add &userID={login}) */ </script>
+    <!-- Snatchbot in lower right corner of app -->                
+    <link href="https://snatchbot.me/sdk/webchat.css " rel="stylesheet " type="text/css">
+    <script src="https://snatchbot.me/sdk/webchat.min.js "></script><script> Init('?botID=38148&appID=webchat', 300, 350, 'https://dvgpba5hywmpo.cloudfront.net/media/image/BpvRQM3EEWY13YCZAd33DOTa8', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '1', '#FFFFFF', 0); /* for authentication of its users, you can define your userID (add &userID={login}) */ </script>
             
     <!-- jQuery Reference -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
 
-   <!-- D3.js for Data Visualization -->
-   <script src="https://d3js.org/d3.v5.min.js "></script>
+    <!-- D3.js for Data Visualization -->
+    <script src="https://d3js.org/d3.v5.min.js "></script>
 
     <!-- My Script -->
     <script type="text/javascript " src="/assets/js/app.js "></script>
-
 </body>
 
 </html>
