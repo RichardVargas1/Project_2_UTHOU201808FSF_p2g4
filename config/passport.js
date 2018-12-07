@@ -1,7 +1,7 @@
 // http://www.passportjs.org/docs/authorize/
 
 const passport = require("passport");
-const bCrypt = require("bcrypt-nodejs")
+const bCrypt = require("bcrypt-nodejs");
 
 // Passport Strategy for authenticating with Username and password
 const LocalStrategy = require("passport-local").Strategy;
@@ -9,15 +9,16 @@ const LocalStrategy = require("passport-local").Strategy;
 // Load user model
 const db = require("../models");
 
-passport.use('local-signin', 
+passport.use(
+    "local-signin",
     new LocalStrategy(
         {
             usernameField: "email",
-            passwordField: 'password',
+            passwordField: "password",
             passReqToCallback: true
         },
         function(req, email, password, done) {
-            console.log("here??")
+            console.log("here??");
             db.User.findOne({
                 where: {
                     email: email
@@ -29,7 +30,7 @@ passport.use('local-signin',
                     });
                 }
 
-                var passwordValid = bCrypt.compare(password, dbUser.password)
+                const passwordValid = bCrypt.compare(password, dbUser.password);
                 if (!passwordValid) {
                     return done(null, false, {
                         message: "Incorrect password."
@@ -41,12 +42,12 @@ passport.use('local-signin',
     )
 );
 
-
-passport.use('local-signup', 
+passport.use(
+    "local-signup",
     new LocalStrategy(
         {
             usernameField: "email",
-            passwordField: 'password',
+            passwordField: "password",
             passReqToCallback: true
         },
         function(email, password, done) {
@@ -55,8 +56,12 @@ passport.use('local-signup',
                     email: email
                 }
             }).then(function(dbUser) {
-                var generateHash = function(password) {
-                    return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+                const generateHash = function(password) {
+                    return bCrypt.hashSync(
+                        password,
+                        bCrypt.genSaltSync(8),
+                        null
+                    );
                 };
 
                 if (dbUser) {
@@ -64,30 +69,30 @@ passport.use('local-signup',
                         message: "This email is associated with an account"
                     });
                 }
-                let username = req.body.username
-                let reqPassword = req.body.password
-                let email = req.body.username
-                
-                let password = generateHash(reqPassword)
+                let username = req.body.username;
+                let reqPassword = req.body.password;
+                let email = req.body.username;
+
+                let password = generateHash(reqPassword);
 
                 const newUser = db.User.build({
                     username,
                     email,
                     password
-                })
+                });
 
-                newUser.save().then((savedUser) => {
-                    done(null, savedUser)
-                })
-                .catch((error) => {
-                    done(err, false)
-                })
+                newUser
+                    .save()
+                    .then(savedUser => {
+                        done(null, savedUser);
+                    })
+                    .catch(error => {
+                        done(err, false);
+                    });
             });
         }
     )
 );
-
-
 
 // Serializes the user info during the session as an object of req.session.passport.user  {}, which is saved to the session
 passport.serializeUser(function(user, cb) {
