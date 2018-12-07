@@ -1,5 +1,6 @@
 // Require the express npm package
 let express = require("express");
+var models = require("./models");
 
 // Require the passport npm package
 //let passport = require("passport");
@@ -12,7 +13,14 @@ const app = express();
 const passport = require("passport");
 const session = require("express-session");
 const bodyParser = require("body-parser");
-
+ 
+//Sync Database
+models.sequelize.sync().then(function() {
+    console.log('Nice! Database looks fine')
+}).catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!")
+ 
+});
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,6 +33,7 @@ app.use(
 app.use(passport.initialize());
 
 app.use(passport.session()); // persistent login sessions
+
 
 // const env = require("dotenv").load();
 
