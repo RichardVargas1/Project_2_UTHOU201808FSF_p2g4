@@ -1,24 +1,21 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+let express = require('express');
+let app = express();
+let bodyParser = require('body-parser');
 // Populating req.cookies with an object keyed by the cookie names. 
-const cookieParser = require('cookie-parser');
-const PORT = process.env.PORT || 7500;
+let cookieParser = require('cookie-parser');
+let PORT = process.env.PORT || 7500;
 
 // A middle to validator form entries
-const expressValidator = require('express-validator');
-
-// Library that helps hash passwords
-const bcrypt = require('bcrypt');
+let expressValidator = require('express-validator');
 
 // Following requires are Authenticaion NPM Packages:
 // Create a session middleware with the given options.
-const session = require('express-session');
-const passport = require('passport');
+let session = require('express-session');
+let passport = require('passport');
 
 
 // Requiring models for syncing pages
-const db = require("./models");
+let db = require("./models");
 
 // Express app to handle data parsing
 app.use(express.static('public'));
@@ -30,30 +27,27 @@ app.use(expressValidator());//this line must be after bodyparser middleware
 app.use(cookieParser());// app.use cookieParser, use for application
 
 if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
+    let options = {
         host: 'localhost',
         user: 'root',
-        password: "",
+        password: '',
         database: 'ensights_db'
-    });
-};
-
-// Make connection.
-connection.connect(function (err) {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
     }
-    console.log("connected as id " + connection.threadId);
-});
+} else {
 
-const sessionStore = new MySQLStore(options);
+    let options = {
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'ensights_db'
+    };
+}
+
+let sessionStore = new MySQLStore(options);
 
 app.use(session({
     //
-    secret: 'cookies',
+    secret: 'secretCookies',
     resave: false,
     store: sessionStore,
     // This creates a cookie upon user login
@@ -79,18 +73,18 @@ passport.use(new LocalStrategy(
             // console.log(user.dataValues.password);
 
             if (user) {
-                const hash = user.dataValues.password
-                const id = user.dataValues.id
-                // compare passwords for hasing, or acquiring a number from an object
-                bcrypt.compare(password, hash, function (err, response) {
+                let hash = user.dataValues.password
+                let id = user.dataValues.id
+                    // compare passwords for hasing, or acquiring a number from an object
+                    bcrypt.compare(password, hash, function (err, response) {
 
-                    if (response === true) {
-                        return done(null, { user_id: id });
-                    } else {
-                        return done(null, false);
-                    }
+                        if (response === true) {
+                            return done(null, { user_id: id });
+                        } else {
+                            return done(null, false);
+                        }
 
-                });
+                    });
 
             } else {
                 done(user);
@@ -101,14 +95,17 @@ passport.use(new LocalStrategy(
 ));
 
 // Set Up Handlebars.
-const exphbs = require("express-handlebars");
+let exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // App Routes =============================================================
 require("./routes/apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
+require("./routes/authenticationRoutes.js")(app);
+require("./routes/login-logoutRoutes.js")(app);
+require("./routes/loginApiRoutes.js")(app);
+require("./routes/searchHistoryRoutes.js")
 
 // Syncing sequelize models, and then, start our Express app
 db.sequelize.sync({ force: true }).then(function () {
