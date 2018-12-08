@@ -41,13 +41,12 @@ passport.use(
     )
 );
 
-passport.use(
-        "local-signup",
-        new LocalStrategy({
-                usernameField: "email",
-                passwordField: "password",
-                passReqToCallback: true
-            },
+passport.use("local-signup",
+    new LocalStrategy({
+        usernameField: "email",
+        passwordField: "password",
+        passReqToCallback: true
+        },
             function (email, password, done) {
                 db.User.findOne({
                     where: {
@@ -88,9 +87,6 @@ passport.use(
                     //     done(err, false);
                 });
 
-
-
-
                 // Serializes the user info during the session as an object of req.session.passport.user  {}, which is saved to the session
                 passport.serializeUser(function (user, cb) {
                     cb(null, user);
@@ -101,4 +97,4 @@ passport.use(
                     cb(null, obj);
                 });
 
-                module.exports = passport })
+                // module.exports = passport;
