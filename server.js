@@ -1,17 +1,17 @@
+// Following requires are Authenticaion NPM Packages:
 const express = require('express');
 const app = module.exports = express();
-
-// Following requires are Authenticaion NPM Packages:
-// Create a session middleware with the given options.
+const bodyParser = require('body-parser');
+const LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
-const passport = require('passport');
-const bodyParser = require('body-parser');
+
 // Populating req.cookies with an object keyed by the cookie names. 
 const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 7500;
 
-// A middle to validator form entries
+// A middle to validate form entries
 const expressValidator = require('express-validator');
 
 // Requiring (For Windows) bcyrpt-nodejs.
@@ -60,8 +60,8 @@ app.use(function (req, res, next) {
 // User Login Authenication
 
 passport.use(new LocalStrategy(
-    function (email, password, done) {
-        db.multipleUsers.findOne({ where: { email: email } }).then(user => {
+    function (username, password, done) {
+        db.findOne({ username: username }).then(user => {
             console.log('Login Information');
             // console.log(user.dataValues.password);
             if (user) {
@@ -69,7 +69,6 @@ passport.use(new LocalStrategy(
                 const id = user.dataValues.id
                 // compare passwords for hasing, or acquiring a number from an object
                 bcrypt.compare(password, hash, function (err, response) {
-
                     if (response === true) {
                         return done(null, { user_id: id });
                     } else {
@@ -90,11 +89,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // App Routes =============================================================
-require("./routes/apiRoutes.js")(app);
+require("./routes/apiRoutes.js");
 require("./routes/authenticationRoutes.js")(app);
 require("./routes/login-logoutRoutes.js")(app);
 require("./routes/loginApiRoutes.js")(app);
-require("./routes/searchHistoryRoutes.js")
+require("./routes/searchHistoryRoutes.js");
 
 // Syncing sequelize models, and then, start our Express app
 db.sequelize.sync({ force: true }).then(function () {
