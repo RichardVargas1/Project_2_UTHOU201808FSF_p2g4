@@ -1,7 +1,7 @@
 // helps navigate multiple user sign-ups
 
 module.exports = function (sequelize, DataTypes) {
-	var usertwos = sequelize.define("usertwos", {
+	const multipleUsers = sequelize.define("multipleUsers", {
 		username: {
 			type: DataTypes.STRING,
       		allowNull: false,
@@ -27,17 +27,16 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	});
 
-	usertwos.associate = function(models) {
-		// Associating Author with Posts
-		// When an Author is deleted, also delete any associated Posts
-		usertwos.hasMany(models.history, {
+	multipleUsers.associate = function(models) {
+		// Associating User Profiles, with Posts. When an User is deleted, this will also delete any associated Posts
+		multipleUsers.hasMany(models.history, {
 		  onDelete: "cascade"
 		});
 
-		usertwos.hasMany(models.favorites, {
+		multipleUsers.hasMany(models.favorites, {
 			onDelete: "cascade"
 		});
 
 	};
-	return usertwos;
+	return multipleUsers;
 }

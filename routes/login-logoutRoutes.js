@@ -14,9 +14,9 @@ module.exports = function(app){
   }));
 
   app.get('/logout', function(req, res){
-    //removes from client broswer cookies
+    // Deletes from the client broswer cookies
     req.logout();
-    //removes us from the database
+    // Deletes user from the database
     req.session.destroy();
     res.redirect('/');
 
