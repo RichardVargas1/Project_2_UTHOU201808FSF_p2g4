@@ -1,21 +1,24 @@
-let express = require('express');
-let app = express();
-let bodyParser = require('body-parser');
-// Populating req.cookies with an object keyed by the cookie names. 
-let cookieParser = require('cookie-parser');
-let PORT = process.env.PORT || 7500;
-
-// A middle to validator form entries
-let expressValidator = require('express-validator');
+const express = require('express');
+const app = module.exports = express();
 
 // Following requires are Authenticaion NPM Packages:
 // Create a session middleware with the given options.
-let session = require('express-session');
-let passport = require('passport');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+const passport = require('passport');
+const bodyParser = require('body-parser');
+// Populating req.cookies with an object keyed by the cookie names. 
+const cookieParser = require('cookie-parser');
+const PORT = process.env.PORT || 7500;
 
+// A middle to validator form entries
+const expressValidator = require('express-validator');
+
+// Requiring (For Windows) bcyrpt-nodejs.
+const bcrypt = require('bcrypt-nodejs');
 
 // Requiring models for syncing pages
-let db = require("./models");
+const db = require("./models");
 
 // Express app to handle data parsing
 app.use(express.static('public'));
@@ -26,30 +29,21 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(expressValidator());//this line must be after bodyparser middleware
 app.use(cookieParser());// app.use cookieParser, use for application
 
-if (process.env.JAWSDB_URL) {
-    let options = {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'ensights_db'
-    }
-} else {
-
-    let options = {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'ensights_db'
-    };
+const options = {
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '',
+    database: 'ensights_db'
 }
 
-let sessionStore = new MySQLStore(options);
+const sessionStore = new MySQLStore(options);
 
 app.use(session({
-    //
+    key: 'session_cookie_name',
     secret: 'secretCookies',
-    resave: false,
     store: sessionStore,
+    resave: false,
     // This creates a cookie upon user login
     saveUninitialized: false
 }));
@@ -67,35 +61,30 @@ app.use(function (req, res, next) {
 
 passport.use(new LocalStrategy(
     function (email, password, done) {
-
-        db.usertwos.findOne({ where: { email: email } }).then(user => {
+        db.multipleUsers.findOne({ where: { email: email } }).then(user => {
             console.log('Login Information');
             // console.log(user.dataValues.password);
-
             if (user) {
-                let hash = user.dataValues.password
-                let id = user.dataValues.id
-                    // compare passwords for hasing, or acquiring a number from an object
-                    bcrypt.compare(password, hash, function (err, response) {
+                const hash = user.dataValues.password
+                const id = user.dataValues.id
+                // compare passwords for hasing, or acquiring a number from an object
+                bcrypt.compare(password, hash, function (err, response) {
 
-                        if (response === true) {
-                            return done(null, { user_id: id });
-                        } else {
-                            return done(null, false);
-                        }
-
-                    });
-
+                    if (response === true) {
+                        return done(null, { user_id: id });
+                    } else {
+                        return done(null, false);
+                    }
+                });
             } else {
                 done(user);
             }
-
         });
     }
 ));
 
 // Set Up Handlebars.
-let exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
