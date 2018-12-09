@@ -5,8 +5,8 @@ const expressValidator = require('express-validator');
 const passport = require('passport');
 
 // Used to hash our passwords to our database for security
-// const bcrypt = require('bcrypt');
-// const express validator
+const bcrypt = require('bcrypt-nodejs');
+const saltRounds = 5;
 
 // Routes =============================================================
 module.exports = function (app) {
@@ -53,9 +53,9 @@ module.exports = function (app) {
 
             console.log(name);
 
-            // Password encryption
-            bcrypt.hash(password, function (err, hash) {
-                db.usertwos.create({
+            // Password encryption, utilizing the newer bcrypt-nodjs
+            bcrypt.hash(password, saltRounds, function (err, hash) {
+                db.multipleUsers.create({
                     username: name,
                     password: hash,
                     email: email

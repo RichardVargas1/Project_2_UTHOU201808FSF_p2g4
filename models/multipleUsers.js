@@ -32,11 +32,6 @@ module.exports = function (sequelize, DataTypes) {
 		multipleUsers.hasMany(models.history, {
 		  onDelete: "cascade"
 		});
-
-		multipleUsers.hasMany(models.favorites, {
-			onDelete: "cascade"
-		});
-
 	};
 	return multipleUsers;
 }

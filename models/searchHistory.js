@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
 	history.associate = function(models) {
 		// Any history should belong to an author
 		// foreign key constraint
-		history.belongsTo(models.usertwos, {
+		history.belongsTo(models.multipleUsers, {
 			foreignKey: {
 				allowNull: false
 			}
