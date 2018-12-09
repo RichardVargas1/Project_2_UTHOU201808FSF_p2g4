@@ -17,7 +17,7 @@ router.get("/register", (req, res) => {
 
 router.get("/products/:cat", async (req, res) => {
     const cat = req.params.cat;
-    //const product = await models['Product'].findAll({where: {type: cat}});
+    // const product = await models['Product'].findAll({where: {type: cat}});
     const products = [
         {
             brand_name: "mybrand",

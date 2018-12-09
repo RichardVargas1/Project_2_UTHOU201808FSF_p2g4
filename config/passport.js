@@ -1,5 +1,3 @@
-// http://www.passportjs.org/docs/authorize/
-
 const passport = require("passport");
 const bCrypt = require("bcrypt-nodejs");
 
@@ -42,11 +40,11 @@ passport.use(
 );
 
 passport.use("local-signup",
-    new LocalStrategy({
-        usernameField: "email",
-        passwordField: "password",
-        passReqToCallback: true
-        },
+        new LocalStrategy({
+                usernameField: "email",
+                passwordField: "password",
+                passReqToCallback: true
+            },
             function (email, password, done) {
                 db.User.findOne({
                     where: {
@@ -82,7 +80,7 @@ passport.use("local-signup",
                         .save()
                         .then(savedUser => {
                             done(null, savedUser);
-                        })
+                        });
                     // .catch(error => {
                     //     done(err, false);
                 });
