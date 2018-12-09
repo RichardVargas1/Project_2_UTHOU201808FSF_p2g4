@@ -11,7 +11,7 @@ module.exports = function(app) {
         db.history
             .findAll({
                 where: {
-                    usertwoId: req.params.username
+                    multipleUsers: req.params.username
                 }
             })
             // eslint-disable-next-line prettier/prettier
@@ -29,7 +29,7 @@ module.exports = function(app) {
     app.post("/api/history", function(req, res) {
         db.history
             .create({
-                usertwoId: req.body.userId,
+                multipleUsers: req.body.userId,
                 item: req.body.foods
             })
             // eslint-disable-next-line arrow-parens
