@@ -14,3 +14,4 @@ $("#submit").on("click", function(event) {
 });
 
 // Need to create a event listerner to get login information
+// elements
