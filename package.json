@@ -41,5 +41,8 @@
     "eslint-plugin-prettier": "^3.0.0",
     "ocha": "0.0.1",
     "prettier": "^1.15.3"
+  },
+  "directories": {
+    "test": "test"
   }
 }
