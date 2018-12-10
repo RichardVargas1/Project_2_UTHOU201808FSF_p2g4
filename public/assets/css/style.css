@@ -203,12 +203,14 @@ a {
 
 .hr {
   height: 2px;
-  margin: 60px 0 50px 0;
+  margin: 0;
   background: rgba(255, 255, 255, .2);
 }
 
 .foot-lnk {
   text-align: center;
+  font: 'Ubuntu', sans-serif;
+  font-size: 12px;
 }
 
 #notfound {

@@ -1,2 +1,2 @@
-CREATE DATABASE ensights_database;
+CREATE DATABASE ensights_development;
 
