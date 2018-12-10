@@ -48,6 +48,11 @@ module.exports = function(app) {
     app.get("/dryers", (req, res) => {
         res.render("dryers");
     });
+
+    // Render 404 page for any unmatched routes
+    // app.get("*", (req, res) => {
+    //     res.render("404");
+    // });
 };
 
 //Need to add this back for table display
