@@ -1,7 +1,7 @@
 // this file registers new users & validates them as well
 
 const db = require("../models");
-const expressValidator = require('express-validator');
+// const expressValidator = require('express-validator');
 const passport = require('passport');
 
 // Used to hash our passwords to our database for security
