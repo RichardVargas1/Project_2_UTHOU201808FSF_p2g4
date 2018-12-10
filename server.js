@@ -94,6 +94,8 @@ app.set("view engine", "handlebars");
 
 // App Routes =============================================================
 require("./routes/apiRoutes.js");
+// require("./routes/htmlRoutes.js");
+require("./routes/handlebarRoutes.js")(app);
 require("./routes/authenticationRoutes.js")(app);
 require("./routes/login-logoutRoutes.js")(app);
 require("./routes/loginApiRoutes.js")(app);

@@ -1,18 +1,33 @@
 /* eslint-disable camelcase */
 const express = require("express");
 const router = express.Router();
-// const models = require('../models');  ** need to add this back in
+// const models = require('../models');
 
+// Login Routes
+router.get("/login", (req, res) => {
+    res.render("login");
+});
+router.get("/register", (req, res) => {
+    res.render("register");
+});
+
+// Main Page Route
 router.get("/", (req, res) => {
     res.render("index");
 });
 
-router.get("/login", (req, res) => {
-    res.render("login");
+// Product Routes
+router.get("/products/dishwashers", (req, res) => {
+    res.get("dishwashers");
 });
-
-router.get("/register", (req, res) => {
-    res.render("register");
+router.get("/products/fridges", (req, res) => {
+    res.render("fridges");
+});
+router.get("/products/washers", (req, res) => {
+    res.render("washers");
+});
+router.get("/products/dryers", (req, res) => {
+    res.render("dryers");
 });
 
 router.get("/products/:cat", async (req, res) => {
