@@ -24,7 +24,7 @@ module.exports = function(app) {
         db.user.find({ where: { email: req.body.email } }).then(user => {
             console.log("-------- user ------");
             if (user) {
-                res.send("User already exits");
+                res.send("User already exists");
             } else {
                 bcrypt.hash(req.body.password, null, null, function(err, hash) {
                     // Store hash in your password DB.
@@ -46,8 +46,8 @@ module.exports = function(app) {
     });
 
     // Main/Home Page Route
-    app.get("/home", (req, res) => {
-        res.render("home");
+    app.get("/", (req, res) => {
+        res.render("login");
     });
 
     // users route to to products
