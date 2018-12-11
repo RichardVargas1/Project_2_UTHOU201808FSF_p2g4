@@ -8,22 +8,17 @@ html {
 }
  
 body {
-  min-height: 100%;
+  min-height: 50%;
   width: 100%;
   margin: 0;
   padding: 0;
   color: #6a6f8c;
-  /* background: #333; */
-  background-image: url("/assets/img/kitchenbg.jpg");
+  background: #333;
+  background-image: url(https://i.pinimg.com/originals/af/e2/ba/afe2baacb56c97a2e8b87fc177e94055.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: cover;
-  font: 600 16px/18px 'Ubuntu', sans-serif;
-}
-
-h1 {
-  text-align: center;
-  color: #8ADB52;
+  font: 400 16px/18px 'Ubuntu', sans-serif;
 }
 
 .navbar-fixed {
@@ -41,6 +36,47 @@ h1 {
   display: block
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+p {
+  line-height: 2rem;
+}
+
+
+@media screen and (max-width: 300px) {
+.column {
+    width: 50%;
+    display: block;
+  }
+
+#center.h2 {
+    text-align: center;
+    color: black;
+  }
+.icon-block {
+  padding: 0 15px;
+}
+
+.p {
+  color: white;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+} */
 a {
   color: inherit;
   text-decoration: none
