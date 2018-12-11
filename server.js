@@ -102,7 +102,7 @@ require("./routes/loginApiRoutes.js")(app);
 require("./routes/searchHistoryRoutes.js");
 
 // Syncing sequelize models, and then, start our Express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });

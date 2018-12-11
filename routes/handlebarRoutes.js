@@ -6,6 +6,8 @@
 // const express = require("express");
 // const router = express.Router();
 // const path = require("path");
+const db = require("../models");
+const bcrypt = require("bcrypt-nodejs");
 
 // Routes =============================================================
 module.exports = function(app) {
@@ -15,13 +17,37 @@ module.exports = function(app) {
     app.get("/login", (req, res) => {
         res.render("login");
     });
-    app.get("/register", (req, res) => {
-        res.render("register");
+    app.post("/register", (req, res) => {
+        console.log(req.body, "this is the user");
+        let newUser = req.body;
+        // eslint-disable-next-line arrow-parens
+        db.user.find({ where: { email: req.body.email } }).then(user => {
+            console.log("-------- user ------");
+            if (user) {
+                res.send("User already exists");
+            } else {
+                bcrypt.hash(req.body.password, null, null, function(err, hash) {
+                    // Store hash in your password DB.
+
+                    console.log("in ---------------");
+                    db.user
+                        .create({
+                            username: newUser.username,
+                            password: hash,
+                            email: newUser.email
+                        })
+                        // eslint-disable-next-line prettier/prettier
+                        .then((user) => {
+                            res.send(user);
+                        });
+                });
+            }
+        });
     });
 
-    // Main Page Route
+    // Main/Home Page Route
     app.get("/", (req, res) => {
-        res.render("index");
+        res.render("login");
     });
 
     // users route to to products
@@ -48,6 +74,11 @@ module.exports = function(app) {
     app.get("/dryers", (req, res) => {
         res.render("dryers");
     });
+
+    // Render 404 page for any unmatched routes
+    // app.get("*", (req, res) => {
+    //     res.render("404");
+    // });
 };
 
 //Need to add this back for table display

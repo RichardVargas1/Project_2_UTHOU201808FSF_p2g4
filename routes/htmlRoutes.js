@@ -44,9 +44,4 @@ router.get("/products/:cat", async (req, res) => {
     res.render(cat, { products });
 });
 
-// Render 404 page for any unmatched routes
-// router.get("*", (req, res) => {
-//     res.render("404");
-// });
-
 module.exports = router;

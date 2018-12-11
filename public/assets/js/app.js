@@ -1,14 +1,14 @@
 $("#submit").on("click", function(event) {
     event.preventDefault();
     const newUser = {
-        firstName: $("#firstName").val(),
-        lastName: $("#lastName").val(),
-        password: $("#password").val(),
-        email: $("#email").val()
+        password: $("#suPass").val(),
+        username: $("#suUser").val(),
+        email: $("#suEmail").val()
     };
+    console.log(newUser);
 
     console.log(newUser);
-    $.post("/api/register", newUser, function(data) {
+    $.post("/register", newUser, function(data) {
         console.log(data);
     });
 });
