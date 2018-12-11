@@ -64,6 +64,13 @@ ul{
    text-align:center; 
    border:2px solid #d5d5d5;
    margin: 0 0 28px;
+   position: absolute;
+   bottom: 0;
+   background: rgb(0, 0, 0); /* Fallback color */
+   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+   color: #f1f1f1;
+   width: 100%;
+   padding: 20px;
 }
 .our-webcoderskull .cnt-block figure{
    width:148px; 
