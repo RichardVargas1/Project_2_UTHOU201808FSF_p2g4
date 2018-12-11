@@ -145,5 +145,62 @@
     transform: translateX(0) skewX(-45deg);
   }
 
+.card{
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  margin-bottom: 10px;
+  padding: 0 8px;
+  font-size:20px;
+}
+
+@media screen and (max-width: 50px) {
+  .column {
+    width: 25%;
+    display: block;
+  }
+}
+
+.container {
+  padding: 0 10px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  font-size: 20px;
+}
+
+.title {
+  color:black;
+  font-size: 20px;
+}
+
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
 
   

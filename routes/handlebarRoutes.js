@@ -54,7 +54,10 @@ module.exports = function(app) {
     // app.get("/products", function(req, res) {
     //     res.sendFile(path.join(__dirname, "../views/login.handlebars"));
     // });
-
+    // users route to about
+    app.get ("/about", (req, res) =>{
+        res.render("about");
+    })
     // users route to products/dishwashers
     app.get("/dishwashers", (req, res) => {
         res.render("dishwashers");
