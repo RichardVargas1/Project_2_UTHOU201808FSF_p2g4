@@ -46,8 +46,8 @@ module.exports = function(app) {
     });
 
     // Main/Home Page Route
-    app.get("/", (req, res) => {
-        res.render("login");
+    app.get("/home", (req, res) => {
+        res.render("home");
     });
 
     // users route to to products
