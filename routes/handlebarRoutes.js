@@ -55,6 +55,11 @@ module.exports = function(app) {
         res.render("about");
     });
 
+    // users route to profile
+    app.get("/profile", (req, res) => {
+        res.render("profile");
+    });
+
     // users route to to products
     // app.get("/products", function(req, res) {
     //     res.sendFile(path.join(__dirname, "../views/login.handlebars"));
