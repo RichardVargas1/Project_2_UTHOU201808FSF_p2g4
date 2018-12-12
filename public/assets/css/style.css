@@ -12,11 +12,11 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  color: #6a6f8c;
+  color: #222222;
   /* background: #333; */
-  background-image: url("/assets/img/kitchenbg.jpg");
+  background-image: url("/assets/img/hexblack.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: cover;
   font: 600 16px/18px 'Ubuntu', sans-serif;
 }
@@ -29,6 +29,60 @@ h1 {
 .navbar-fixed {
   margin-bottom: 90px;
 }
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #222222;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px; /* the height of the main nav */
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+	
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
 
 .clearfix:after,
 .clearfix:before {
@@ -245,7 +299,7 @@ a {
 .notfound .notfound-404 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 236px;
-  font-weight: 200;
+  font-weight: 500;
   margin: 0px;
   color: #211b19;
   text-transform: uppercase;
@@ -289,7 +343,7 @@ a {
 
 .notfound a:hover {
   color: #ff6300;
-  background: #211b19;
+  background: #222222;
 }
 
 @media only screen and (max-width: 767px) {

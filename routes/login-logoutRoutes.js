@@ -20,6 +20,6 @@ module.exports = function(app) {
         req.logout();
         // Deletes user from the database
         req.session.destroy();
-        res.redirect("/");
+        res.redirect("/login");
     });
 };

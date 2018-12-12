@@ -50,10 +50,30 @@ module.exports = function(app) {
         res.render("login");
     });
 
+    // users route to about
+    app.get("/about", (req, res) => {
+        res.render("about");
+    });
+
+    // users route to profile
+    app.get("/profile", (req, res) => {
+        res.render("profile");
+    });
+
     // users route to to products
     // app.get("/products", function(req, res) {
     //     res.sendFile(path.join(__dirname, "../views/login.handlebars"));
     // });
+
+    // demo route to search results
+    app.get("/searchresultsdemo", (req, res) => {
+        res.render("searchresultsdemo");
+    });
+
+    // users route to products
+    app.get("/products", (req, res) => {
+        res.render("products");
+    });
 
     // users route to products/dishwashers
     app.get("/dishwashers", (req, res) => {
@@ -75,7 +95,7 @@ module.exports = function(app) {
         res.render("dryers");
     });
 
-    // Render 404 page for any unmatched routes
+    //Render 404 page for any unmatched routes
     // app.get("*", (req, res) => {
     //     res.render("404");
     // });
